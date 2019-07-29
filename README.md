@@ -61,7 +61,7 @@ from sklearn.model_selection import train_test_split
 X_train, X_val, y_train, y_val = train_test_split(x_tr, y_tr, test_size=0.20, random_state=123)
 ```
 
-## Displaing the Images
+## Displaying the Images
 
 ### Spiral Galaxy 
 ![Spiral Galaxy](data/train/spiral/177755.jpg 'Spiral Galaxy 177755')
@@ -107,7 +107,9 @@ Accuracy Score on testing: 0.6523
 ![Decision Tree ROC](figures/DecisionTree_ROC.png 'Decision ROC')
 
 
-## 1-layer Neural Network (Baseline Model)
+## 1-hidden-layer Neural Network (Baseline Model)
+
+This model contains one hidden layer with 128 neurons, between the input and output layers. It contains more than an factor of ten fewer neurons compared to the custom CNN.
 
 ![1-Layer Neural Network CM](figures/Baseline_MLP_ConfusionMatrix.png 'Baseline Neural Network CM') 
 
@@ -115,11 +117,16 @@ Accuracy Score on testing: 0.6523
 
 ## Inception Model
 
+A simple classifier was placed on top of the Inception_V3 model, trained on the imagenet dataset.
+
 ![Inception CM](figures/Inception_ConfusionMatrix.png 'Incpetion Confusion Matrix')
 
 ![Inception ROC](figures/Inception_ROC.png 'Inception ROC')
 
+This model performs significantly worse than expected, and worse than our custom CNN model. This is likely because the imagenet dataset consists of objects photographed on the Earth and they are higher resolution images. Our data tend to be fuzzy, and look nothing like Earthly objects. 
+
 ## Combined Models ROC Curves:
 ![Combined ROC](figures/all_models_roc.png 'Combined ROC')
 
+As we can see, the CNN model performed the best and this is without any real tweaking. The model could perform even better if it is allowed to run longer with more data augmentation using the `fit_generator`. 
 
