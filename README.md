@@ -102,7 +102,7 @@ cnn.evaluate(x_te, y_te)
 ## Decision Tree
 ![Decision Tree CM](figures/DecisionTree_ConfusionMatrix.png 'Decision Tree Confusion Matrix') 
 
-Accuracy Score on testing: 0.6887
+Accuracy Score on testing: 0.6523
 
 ![Decision Tree ROC](figures/DecisionTree_ROC.png 'Decision ROC')
 
