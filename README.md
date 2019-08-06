@@ -85,7 +85,8 @@ Running the fit:
 Epoch 50/50
 24000/24000 [==============================] - 107s 4ms/step - loss: 0.4483 - acc: 0.8303 - val_loss: 0.5667 - val_acc: 0.7848
 
-Peeking at some of the hidden layers:
+Given an input image, we can print out some of the hidden layers from the activation of the first layer. The model is creating different filters and applies them to the input image to create different activation features as shown in the snapshot below. 
+
 ![CNN Hidden Layers](figures/hidden_layers_cnn.png 'Hidden Layers CNN')
 
 ![CNN Confusion Matrix](figures/CNN_ConfusionMatrix.png 'CNN Confusion Matrix')
