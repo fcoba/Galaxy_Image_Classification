@@ -1,10 +1,10 @@
 # Galaxy Classification
 
 ## Motivation
-This project was created to offer astronomers help in classifying galaxy morphologies so they don't have to manually look at all the photographic plates. Most models out there offer high accuracies but may not be the easiest to implement or interpret.
+This project offers astronomers help in classifying galaxy morphologies so they can eventually classify billions of images, without relying just on citizen science work, such as Galaxy Zoo. Furthermore, this project offers a glimpse inside the convolutional neural network layers, and how the model is using filtering to extract features.    
 
 
-## Data Retrieval
+## Data Retrieval 
 
 The data used in this project consists of semi low resolution images of galaxies taken from the Sloan Digital Sky Survey (SDSS) and made available on Kaggle as part of the Galaxy Zoo - The Galaxy Challenge:
 
@@ -69,10 +69,10 @@ X_train, X_val, y_train, y_val = train_test_split(x_tr, y_tr, test_size=0.20, ra
 ### Elliptical Galaxy
 ![Elliptical Galaxy](data/train/elliptical/100078.jpg 'Elliptical Galaxy 100078')
 
-## Models
+## Model Results
 
 ### CNN
-For the convolutional neural network, 3-layers are used to train the model, using an stochastic gradient descent optimizer, and a binary-cross entropy loss function. Addtionally, a learning rate, momentum, and augmentation were also used. The activation functions were all relu except for the very last single layer which used a sigmoid activation function. Dropout was also used to make sure the accuracy did not oscillate too much. 
+For the convolutional neural network, a stochastic gradient descent optimizer was used, and a binary-cross entropy loss function. Addtionally, a learning rate, momentum, and augmentation were also used. The activation functions were all relu except for the very last single layer which used a sigmoid activation function. Dropout was also used to make sure the accuracy did not oscillate too much. 
 
 ```python
 cnn1 = cnn.fit(X_train, y_train,
@@ -86,6 +86,8 @@ Epoch 50/50
 24000/24000 [==============================] - 107s 4ms/step - loss: 0.4483 - acc: 0.8303 - val_loss: 0.5667 - val_acc: 0.7848
 
 Given an input image, we can print out some of the hidden layers from the activation of the first layer. The model is creating different filters and applies them to the input image to create different activation features as shown in the snapshot below. 
+
+Convolutional Neural Networks use filters to extract features. CNN's are one of the interpretable neural networks even though they are commonly regarded as a black box. 
 
 ![CNN Hidden Layers](figures/hidden_layers_cnn.png 'Hidden Layers CNN')
 
@@ -110,11 +112,11 @@ Accuracy Score on testing: 0.6887
 
 ## 1-hidden-layer Neural Network (Baseline Model)
 
-This model contains one hidden layer with 128 neurons, between the input and output layers. It contains more than an factor of ten fewer neurons compared to the custom CNN.
-
 ![1-Layer Neural Network CM](figures/Baseline_MLP_ConfusionMatrix.png 'Baseline Neural Network CM') 
 
 ![1-layer Neural Network ROC](figures/BaselineMLP_ROC.png 'Baseline Neural Network ROC')
+
+The simple neural network on the surface performed just as good as a CNN, but when it came time to predicting on images it did not see, it performed worst than the CNN. 
 
 ## Inception Model
 
