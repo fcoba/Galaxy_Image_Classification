@@ -90,6 +90,12 @@ Given an input image, we can print out some of the hidden layers from the activa
 Convolutional Neural Networks use filters to extract features. CNN's are one of the interpretable neural networks even though they are commonly regarded as a black box. 
 
 ![CNN Hidden Layers](figures/hidden_layers_cnn.png 'Hidden Layers CNN')
+![CNN Hidden Layers 0](figures/cnn_layer_0.png 'Hidden Layer 0 CNN')
+![CNN Hidden Layers 1](figures/cnn_layer_1.png 'Hidden Layer 1 CNN')
+![CNN Hidden Layers 3](figures/cnn_layer_3.png 'Hidden Layer 3 CNN')
+![CNN Hidden Layers 5](figures/cnn_layer_5.png 'Hidden Layer 5 CNN')
+![CNN Hidden Layers 7](figures/cnn_layer_7.png 'Hidden Layer 7 CNN')
+![CNN Hidden Layers 9](figures/cnn_layer_9.png 'Hidden Layer 9 CNN')
 
 ![CNN Confusion Matrix](figures/CNN_ConfusionMatrix.png 'CNN Confusion Matrix')
 
